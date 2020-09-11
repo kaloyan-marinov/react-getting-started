@@ -43,3 +43,22 @@ Before React runs, ... [Babel] converts the JSX into function calls.
 This idea that React is responsible for calling your components means that it is able to
 run some setup/teardown code before and after. You’ll see why that matters when we talk
 about Hooks in a bit.
+
+# `02/dynamic-and-reusable-components`
+
+---
+
+to customize a React component ... pass an argument with your dynamic stuff, and then
+the component can do what it wants with that stuff.
+
+Passing props is very similar to setting attributes on an HTML tag. A lot of JSX syntax
+is borrowed from HTML.
+
+Here’s a cool thing about props: you can pass whatever you want into them.
+
+Be intentional about what type you’re passing in, because it will come out as the same
+type!
+
+This is a difference from HTML (where everything is a string) and some other
+frameworks... React doesn’t parse props at all – they get passed through untouched,
+just like function arguments.
