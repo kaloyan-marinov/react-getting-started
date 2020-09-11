@@ -9,7 +9,7 @@ as the first argument, as an object. The props object is just a plain JS object.
 Inside a component that receives multiple props,
 each one will be a separate property on the “props” object that’s passed in.
 */
-function App({ firstName, lastName }) {
+const App = ({ firstName, lastName }) => {
   /*
   This is JavaScript’s destructuring syntax (added in ES6), not a React thing.
 
@@ -22,7 +22,7 @@ function App({ firstName, lastName }) {
       Hello, {firstName} {lastName}!
     </div>
   );
-}
+};
 
 /*
 You might then wonder, where do props come from? How do we pass them in?
