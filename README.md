@@ -74,6 +74,8 @@ React has a feature called **state** which allows components to keep track of va
 
 In order to add state to [a React] component, we can either turn it into a **class component**, or add state directly to the function with **hooks**.
 
+### 1. How `useState` Works
+
 - If you’ve been coding outside of React for any length of time, you likely know about variable scope: a variable declared at the top of a function will be wiped out, erased, forgotten as soon as that function returns.
 
 - So... how is React able to remember the state in-between calls to the component?
@@ -81,3 +83,14 @@ In order to add state to [a React] component, we can either turn it into a **cla
 - Before React calls your component, it sets up an array to keep track of which hooks get called. When you call `useState` in the component, React uses that array behind the scenes to keep track of its initial value, and the value as it changes over time.
 
 - Remember I mentioned earlier that React is responsible for calling your component at render time? And that that means React can do some setup work beforehand? Keeping track of hooks is part of that work.
+
+### 2. How the (state-)setter returned by `useState` works
+
+The (state-)setter returned by `useState` has 2 jobs:
+
+- first it changes the state
+- then it re-renders the component
+
+If you just change the [state] variable directly, React has no way of knowing that it changed, and it won’t re-render. Remember that the [state] is a regular old variable – not a special React thing! It will go out of scope at the end of the function and any changes to it would be lost.
+
+So that’s why it’s important to call the (state-)setter, so that React can update the value of that hook’s state behind the scenes.

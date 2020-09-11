@@ -5,9 +5,17 @@ import "./index.css";
 const Room = () => {
   const [lightSwitch, setLightSwitch] = useState(true);
 
+  /*
+  FYI!! when you pass functions to props,
+  [be carefuly] that you don’t inadvertently [pass a] call [of] the function [instead]:
+  - Wrapping with an arrow function delays execution until the click
+  - Unwrapped call ... will happen before the button is even rendered!
+  */
   return (
     <div className="room">
       The lights in this room are {lightSwitch ? "ON" : "OFF"}.
+      <br />
+      <button onClick={() => setLightSwitch(!lightSwitch)}>flip</button>
     </div>
   );
 };
