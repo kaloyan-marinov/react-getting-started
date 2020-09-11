@@ -11,9 +11,10 @@ const Room = () => {
   - Wrapping with an arrow function delays execution until the click
   - Unwrapped call ... will happen before the button is even rendered!
   */
+  const brightness = lightSwitch ? "lit" : "dark";
   return (
-    <div className="room">
-      The lights in this room are {lightSwitch ? "ON" : "OFF"}.
+    <div className={`room ${brightness}`}>
+      The room is {brightness}.
       <br />
       <button onClick={() => setLightSwitch(!lightSwitch)}>flip</button>
     </div>
