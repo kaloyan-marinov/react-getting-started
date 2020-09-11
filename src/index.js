@@ -4,6 +4,7 @@ import "./index.css";
 
 const Room = () => {
   const [lightSwitch, setLightSwitch] = useState(true);
+  const [temperature, setTemperature] = useState(22);
 
   /*
   FYI!! when you pass functions to props,
@@ -17,6 +18,13 @@ const Room = () => {
       The room is {brightness}.
       <br />
       <button onClick={() => setLightSwitch(!lightSwitch)}>flip</button>
+      <br />
+      <button onClick={() => setLightSwitch(true)}>ON</button>
+      <button onClick={() => setLightSwitch(false)}>OFF</button>
+      <br />
+      <button onClick={() => setTemperature(temperature - 1)}>-</button>
+      The temperature is {temperature}.
+      <button onClick={() => setTemperature(temperature + 1)}>+</button>
     </div>
   );
 };
