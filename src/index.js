@@ -9,10 +9,17 @@ as the first argument, as an object. The props object is just a plain JS object.
 Inside a component that receives multiple props,
 each one will be a separate property on the “props” object that’s passed in.
 */
-function App(props) {
+function App({ firstName, lastName }) {
+  /*
+  This is JavaScript’s destructuring syntax (added in ES6), not a React thing.
+
+  What that says is: “I expect the first argument will be an object.
+  Please extract the ‘firstName’ and 'lastName' properties out of it,
+  and give them to me as variable called ‘firstName’ and 'lastName', respectively.”
+  */
   return (
     <div className="container">
-      Hello, {props.firstName} {props.lastName}!
+      Hello, {firstName} {lastName}!
     </div>
   );
 }

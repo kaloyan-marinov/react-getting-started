@@ -62,3 +62,6 @@ type!
 This is a difference from HTML (where everything is a string) and some other
 frameworks... React doesn’t parse props at all – they get passed through untouched,
 just like function arguments.
+
+[Using] JavaScript’s destructuring syntax [in the signature of React components is]
+Useful for documentation purposes.
