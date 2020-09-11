@@ -24,12 +24,34 @@ const App = ({ firstName, lastName }) => {
   );
 };
 
+const MediaCard = ({ title, body, imageUrl }) => {
+  // Can't return all 3 elements at once - need to wrap them in a single parent element!
+  return (
+    <div>
+      <h2>{title}</h2>
+      <p>{body}</p>
+      <img src={imageUrl} />
+    </div>
+  );
+};
+
+const dogImage =
+  "./static/depositphotos_44339023-stock-photo-american-staffordshire-terrier-sitting-isolated.jpg";
+
 /*
 You might then wonder, where do props come from? How do we pass them in?
 
 You, the developer, get to pass props to a component when it is rendered.
 */
 ReactDOM.render(
-  <App firstName={"John"} lastName={"Doe"} />,
+  <MediaCard
+    title="Doggy"
+    body={
+      <React.Fragment>
+        This is a picture of an <strong>amstaff</strong>.
+      </React.Fragment>
+    }
+    imageUrl={dogImage}
+  />,
   document.querySelector("#root")
 );
