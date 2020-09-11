@@ -15,7 +15,3 @@ One of the defining features of React is the idea of **one-way data flow**...
 In the one-way data flow model, data is only ever passed _down_ the tree, from a component to its children... With React you’d pass that data into the top-level component, and that one would pass it down, and so on.
 
 ... JSX is heavily inspired by HTML (with the you-must-close-every-tag strictness of XML)...
-
-# `01/hello-world`
-
----
