@@ -38,20 +38,13 @@ const MediaCard = ({ title, body, imageUrl }) => {
 const dogImage =
   "./static/depositphotos_44339023-stock-photo-american-staffordshire-terrier-sitting-isolated.jpg";
 
+const Gate = ({ isOpen }) => {
+  return <div>This gate is {isOpen ? "OPEN" : "CLOSED"}.</div>;
+};
+
 /*
 You might then wonder, where do props come from? How do we pass them in?
 
 You, the developer, get to pass props to a component when it is rendered.
 */
-ReactDOM.render(
-  <MediaCard
-    title="Doggy"
-    body={
-      <React.Fragment>
-        This is a picture of an <strong>amstaff</strong>.
-      </React.Fragment>
-    }
-    imageUrl={dogImage}
-  />,
-  document.querySelector("#root")
-);
+ReactDOM.render(<Gate isOpen={false} />, document.querySelector("#root"));
